@@ -27,3 +27,10 @@ jobs:
     # Runs a single command using the runners shell
     - name: MSBuild
       run: msbuild $Env:GITHUB_WORKSPACE\LootUI\LootUI.csproj
+
+    # Upload the artifact: https://github.com/marketplace/actions/upload-artifact
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Upload Artifacts
+        path: PacketHandler/bin
